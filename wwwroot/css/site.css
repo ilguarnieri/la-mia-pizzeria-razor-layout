@@ -47,9 +47,9 @@ a{
     color: currentColor;
 }
 
-a:hover{
-    color: red;
-}
+    a:hover {
+        color: red;
+    }
 
 
 .welcome-wrapper {
@@ -59,6 +59,15 @@ a:hover{
 .welcome-wrapper .title {
     font-size: min(15vw, 150px);
 }
+
+.welcome-wrapper .menu-title{
+    opacity: 0.7;
+    transition: all 200ms linear;
+}
+
+    .welcome-wrapper .menu-title:hover {
+        opacity: 1;
+    }
 
     .welcome-wrapper .title::after {
         height: 7px;

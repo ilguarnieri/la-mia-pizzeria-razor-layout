@@ -15,11 +15,7 @@ namespace la_mia_pizzeria_static.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Menu()
-        {
+            ViewData["Title"] = "Home";
             return View();
         }
 
