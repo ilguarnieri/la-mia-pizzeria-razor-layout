@@ -12,8 +12,9 @@
 }
 
 
-<main class="d-flex justify-content-center flex-wrap gap-4 p-3">
-    <ul>
+<main class="pizza-background">
+    <div class="container-fluid container-lg d-flex justify-content-center flex-wrap gap-4 p-3">
+        <ul>
         @foreach(Pizza pizza in pizze){
             <li class="pizza-wrapper d-flex flex-column align-items-center p-4 position-relative mb-3">
 
@@ -36,4 +37,5 @@
             </li>
         }
     </ul>
+    </div>
 </main>

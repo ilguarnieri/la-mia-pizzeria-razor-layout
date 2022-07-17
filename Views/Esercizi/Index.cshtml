@@ -1,0 +1,119 @@
+﻿<section class="razor-wrapper container">
+    <h1 class="text-center mb-5">Esercizi Razor</h1>
+
+    <ol>
+        <li>
+            <p>Dichiarare una variabile valorizzandola con il nostro nome. Dichiarare un'altra variabile valorizzandola con il nostro cognome. Stampare il nostro nome e cognome all'interno di un tag h2.
+
+            </p>
+                @{
+                    string nome = "Angelo";
+                    string cognome = "Guarnieri";
+                }
+
+                <h2>@nome @cognome</h2>
+        </li>
+        <li>
+            <p>
+                Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso). Stampare dentro uno span il risultato.
+            </p>
+
+            @{
+                int n = 8;
+
+                int SumNumber(int n)
+                {
+                    int sum = 0;
+
+                    for(int i = 1; i <= n; i++)
+                    {
+                        sum += i;
+                    }
+
+                    return sum;
+                }
+            }
+
+            <span class="fw-bold">La somma dei numeri da 1 a @n è @SumNumber(@n)</span>
+
+        </li>
+        <li>
+            <p>
+                Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina.
+            </p>
+
+            @{
+                string stringa = "nel mezzo del cammin di nostra vita";
+                char carattere = 'a';
+            
+                int CountChar(string inputString, char inputChar)
+                {
+                    int count = 0;
+            
+                    for(int i = 0; i < inputString.Length; i++)
+                    {
+                        if(inputString[i] == inputChar)
+                        {
+                            count++;
+                        }
+                    }
+            
+                    return count;
+                }
+            }
+
+            <p class="fw-bold">La stringa <span class="text-uppercase">"@stringa"</span> contiene @CountChar(@stringa, @carattere) volte il carattere '@carattere'.</p>
+        </li>
+        <li>
+            <p>
+                Creare una List di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70.
+            </p>
+            @{
+                List<int> numeri = new List<int>();
+
+                while(numeri.Count < 20)
+                {
+                    int numero = new Random().Next(1, 91);
+                    numeri.Add(numero);
+                }
+            }
+
+            <ul>
+                @foreach(int numero in numeri)
+            {
+                if(numero >= 20 && numero <= 70)
+                {
+                    <li class="fw-bold">@numero</li>
+                }
+            }
+            </ul>
+        </li>
+        <li>
+            <p>
+                Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi.
+            </p>
+            @{
+                DateTime oggi = DateTime.Now;
+            }
+
+            <h5>@oggi.ToString("yyyy/mm/dd HH:mm:ss")</h5>
+        </li>
+        <li>
+            <p>
+                Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina:
+            </p>
+            <p>
+                a. la data di 7 giorni fa.
+            </p>
+            <h4>@oggi.AddDays(-7).ToString("d")</h4>
+            <p>
+                b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...).
+            </p>
+            <h4>@oggi.ToString("dddd")</h4>
+            <p>
+                c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...).
+            </p>
+            <h4>@oggi.AddYears(1).ToString("dddd")</h4>
+        </li>
+    </ol>
+</section>

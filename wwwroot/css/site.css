@@ -1,4 +1,4 @@
-html {
+1html {
   font-size: 14px;
 }
 
@@ -20,11 +20,14 @@ html {
 
 body{
     height:100vh;
+}
+
+.pizza-background {
     background-image: url(/img/background.jpg);
     background-size: cover;
 }
 
-footer{
+footer {
     border-top: 1px solid lightgray;
     background-color: white;
 }
@@ -51,7 +54,7 @@ a{
         color: red;
     }
 
-
+/*------------------------------- I N D E X ------------------------------*/
 .welcome-wrapper {
     color: white;
 }
@@ -101,6 +104,7 @@ a{
     }
 }
 
+/*------------------------------- M E N U ------------------------------*/
 .pizza-wrapper {
     width: 350px;
     box-shadow: 6px 9px 11px 0px rgba(0, 0, 0, 0.16);
@@ -134,4 +138,10 @@ a{
     height: 80px;
     width: 80px;
     clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+
+/*------------------------------- R A Z O R ------------------------------*/
+.razor-wrapper{
+    
 }
