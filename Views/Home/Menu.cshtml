@@ -1,0 +1,40 @@
+﻿@{
+
+    List<Pizza> pizze = new List<Pizza>();
+
+    pizze.Add(new Pizza("Pizza Margherita", "Of loved knew labyrinth yes unto if eremites or said", "margherita.jpg", "4,50"));
+    pizze.Add(new Pizza("Speck e gorgonzola", "Nome in transitorie di con esser niuno dare vostro dio", "speck.jpg", "8,00"));
+    pizze.Add(new Pizza("Pizza Calabria", "Euren erste der wie um jugendlich steigt lieb lebens nicht", "calabria.jpg", "6,50"));
+    pizze.Add(new Pizza("Pizza Sicilia", "Zürntest geschaut geträumt ein der mit du denkst denkst lange", "sicilia.jpg", "7,50"));
+    pizze.Add(new Pizza("Pizza Puglia", "Libre du n'ont et flot gouffres pussent - mes impassibles", "puglia.jpg", "8,50"));
+    pizze.Add(new Pizza("Pizza Emilia", "Vero dolor eos ea et gubergren nulla elitr dolores ea", "emilia.jpg", "7,00"));
+
+    ViewData["Title"] = "Menu";
+}
+
+
+<main class="d-flex justify-content-center flex-wrap gap-4 p-3">
+    <ul>
+        @foreach(Pizza pizza in pizze){
+            <li class="pizza-wrapper d-flex flex-column align-items-center p-4 position-relative mb-3">
+
+                @*Immagine e prezzo*@
+                <div class="img-wrapper mb-3">
+                    <img src="/img/@pizza.Photo">
+
+                    @*prezzo*@
+                    <div class="price-wrap d-flex justify-content-end">
+                    <p class="m-0 pt-1 pe-2">@pizza.Price €</p>
+                    </div>
+                </div>
+
+                @*Nome pizza*@
+                <h3 class="text-name">@pizza.Name</h3>
+
+                @*descrizione pizza*@
+                <p class="text-center pt-2">@pizza.Description</p>
+
+            </li>
+        }
+    </ul>
+</main>
